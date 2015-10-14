@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 创业 | BH4CXJ</title>
+  <title>网络连接正常，上不了网 | BH4CXJ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BH4CXJ">
-<meta property="og:url" content="http://say520.xyz/tags/创业/index.html">
+  <meta name="description" content="昨天办公室网络不稳定，最后我的电脑上不了网了，网络连接一切正常。IP、DNS、MAC地址冲突都排查了，本地网络可以互通，DNS可以解析，最后就是是不能连上网络。但是无线连接可以使用，最后怀疑到驱动上了，或者系统bug，bug这条先不考虑。今天到办公室的时候和昨天一样的情况，还是上不了网，重新想了想，可能是ARP的问题。就arp -a了下，果然运气不错，发现网关的mac竟然是99-99-99-99-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络连接正常，上不了网">
+<meta property="og:url" content="http://say520.xyz/2015/10/14/网络连接正常，上不了网/index.html">
 <meta property="og:site_name" content="BH4CXJ">
-<meta property="og:description">
+<meta property="og:description" content="昨天办公室网络不稳定，最后我的电脑上不了网了，网络连接一切正常。IP、DNS、MAC地址冲突都排查了，本地网络可以互通，DNS可以解析，最后就是是不能连上网络。但是无线连接可以使用，最后怀疑到驱动上了，或者系统bug，bug这条先不考虑。今天到办公室的时候和昨天一样的情况，还是上不了网，重新想了想，可能是ARP的问题。就arp -a了下，果然运气不错，发现网关的mac竟然是99-99-99-99-">
+<meta property="og:updated_time" content="2015-10-14T08:50:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BH4CXJ">
-<meta name="twitter:description">
+<meta name="twitter:title" content="网络连接正常，上不了网">
+<meta name="twitter:description" content="昨天办公室网络不稳定，最后我的电脑上不了网了，网络连接一切正常。IP、DNS、MAC地址冲突都排查了，本地网络可以互通，DNS可以解析，最后就是是不能连上网络。但是无线连接可以使用，最后怀疑到驱动上了，或者系统bug，bug这条先不考虑。今天到办公室的时候和昨天一样的情况，还是上不了网，重新想了想，可能是ARP的问题。就arp -a了下，果然运气不错，发现网关的mac竟然是99-99-99-99-">
   
     <link rel="alternative" href="/atom.xml" title="BH4CXJ" type="application/atom+xml">
   
@@ -76,39 +77,78 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/09/29/创业公司的这些问题…其实是常态/" class="archive-article-date">
-  <time datetime="2015-09-29T08:59:21.000Z" itemprop="datePublished">9月 29</time>
+        <section id="main"><article id="post-网络连接正常，上不了网" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/14/网络连接正常，上不了网/" class="article-date">
+  <time datetime="2015-10-14T08:31:38.000Z" itemprop="datePublished">2015-10-14</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/29/创业公司的这些问题…其实是常态/">创业公司的这些问题…其实是常态</a>
+    <h1 class="article-title" itemprop="name">
+      网络连接正常，上不了网
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天办公室网络不稳定，最后我的电脑上不了网了，网络连接一切正常。IP、DNS、MAC地址冲突都排查了，本地网络可以互通，DNS可以解析，最后就是是不能连上网络。但是无线连接可以使用，最后怀疑到驱动上了，或者系统bug，bug这条先不考虑。<br>今天到办公室的时候和昨天一样的情况，还是上不了网，重新想了想，可能是ARP的问题。<br>就arp -a了下，果然运气不错，发现网关的mac竟然是99-99-99-99-99-99。<br>不知道为什么变成这样了，arp中毒？<br>不过查到原因了就知道怎么解决了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arp <span class="operator">-d</span> <span class="number">192.168</span>.<span class="number">1.1</span> </span><br><span class="line">arp <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">1.1</span> xx-xx-xx-xx-xx-xx</span><br><span class="line"></span><br><span class="line">最后在启动项中添加一条，可以在开机之后清空ARP缓存，或者写一个脚本固定<span class="number">10</span>分钟清空一次</span><br><span class="line">reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /ve /t REG_SZ /d <span class="string">"C:\Windows\System\cmd.exe /c arp -d"</span></span><br></pre></td></tr></table></figure></p>
+<p>这次问题发生原因还不清楚，一开始也莫名其妙，总结一下思路：<br>1.本地网络畅通，网关ping的通，手动自动设置都可以<br>2.DNS解析，hosts文件<br>3.ARP映射<br>4.驱动问题，尝试重新安装</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://say520.xyz/2015/10/14/网络连接正常，上不了网/" data-id="cifqk5idu00054iwmnd68dbi9" class="article-share-link">Share</a>
+      
+        <a href="http://say520.xyz/2015/10/14/网络连接正常，上不了网/#ds-thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARP/">ARP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/10/国庆节宣桥架台/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">国庆节宣桥架台</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  	<div class="ds-thread" data-thread-key="post" data-title="网络连接正常，上不了网" data-url="http://say520.xyz/2015/10/14/网络连接正常，上不了网/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"bh4cxj"};
+  	(function() {
+  		var ds = document.createElement('script');
+  		ds.type = 'text/javascript';ds.async = true;
+  		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  		ds.charset = 'UTF-8';
+  		(document.getElementsByTagName('head')[0] 
+  		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+  	})();
+  	</script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
 </section>
         
           <aside id="sidebar">

@@ -78,6 +78,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-网络连接正常，上不了网" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/14/网络连接正常，上不了网/" class="article-date">
+  <time datetime="2015-10-14T08:31:38.000Z" itemprop="datePublished">2015-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/14/网络连接正常，上不了网/">网络连接正常，上不了网</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天办公室网络不稳定，最后我的电脑上不了网了，网络连接一切正常。IP、DNS、MAC地址冲突都排查了，本地网络可以互通，DNS可以解析，最后就是是不能连上网络。但是无线连接可以使用，最后怀疑到驱动上了，或者系统bug，bug这条先不考虑。<br>今天到办公室的时候和昨天一样的情况，还是上不了网，重新想了想，可能是ARP的问题。<br>就arp -a了下，果然运气不错，发现网关的mac竟然是99-99-99-99-99-99。<br>不知道为什么变成这样了，arp中毒？<br>不过查到原因了就知道怎么解决了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arp <span class="operator">-d</span> <span class="number">192.168</span>.<span class="number">1.1</span> </span><br><span class="line">arp <span class="operator">-s</span> <span class="number">192.168</span>.<span class="number">1.1</span> xx-xx-xx-xx-xx-xx</span><br><span class="line"></span><br><span class="line">最后在启动项中添加一条，可以在开机之后清空ARP缓存，或者写一个脚本固定<span class="number">10</span>分钟清空一次</span><br><span class="line">reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /ve /t REG_SZ /d <span class="string">"C:\Windows\System\cmd.exe /c arp -d"</span></span><br></pre></td></tr></table></figure></p>
+<p>这次问题发生原因还不清楚，一开始也莫名其妙，总结一下思路：<br>1.本地网络畅通，网关ping的通，手动自动设置都可以<br>2.DNS解析，hosts文件<br>3.ARP映射<br>4.驱动问题，尝试重新安装</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://say520.xyz/2015/10/14/网络连接正常，上不了网/" data-id="cifqk5idu00054iwmnd68dbi9" class="article-share-link">Share</a>
+      
+        <a href="http://say520.xyz/2015/10/14/网络连接正常，上不了网/#ds-thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARP/">ARP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-国庆节宣桥架台" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/10/国庆节宣桥架台/" class="article-date">
@@ -109,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/10/10/国庆节宣桥架台/" data-id="cifkhcrlq000jwtwmkcs5s94z" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/10/10/国庆节宣桥架台/" data-id="cifqk5iea000o4iwmr0ccb39p" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/10/10/国庆节宣桥架台/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -155,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/10/08/sed使用总结（更新中-）/" data-id="cifkhcrm0000twtwmnw9z8ako" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/10/08/sed使用总结（更新中-）/" data-id="cifqk5iem000y4iwmq34t6lyz" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/10/08/sed使用总结（更新中-）/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -201,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/30/有多少人建立个人站点只是为了好玩/" data-id="cifkhcrlm000ewtwm75brokq5" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/30/有多少人建立个人站点只是为了好玩/" data-id="cifqk5ie3000j4iwm0ux91oi1" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/30/有多少人建立个人站点只是为了好玩/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -247,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/29/VIM总结出的一张图/" data-id="cifkhcrma000zwtwmuyeb00lw" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/29/VIM总结出的一张图/" data-id="cifqk5iey00144iwmyoen6kfl" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/29/VIM总结出的一张图/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -293,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/29/创业公司的这些问题…其实是常态/" data-id="cifkhcrlx000pwtwm9npqbowz" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/29/创业公司的这些问题…其实是常态/" data-id="cifqk5ieh000u4iwmoc4udeju" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/29/创业公司的这些问题…其实是常态/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -324,11 +367,11 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/img/read/photo1.jpg" rel="gallery_cifkhcrl20000wtwmp0iiwooy">
+      <a class="article-gallery-img fancybox" href="/img/read/photo1.jpg" rel="gallery_cifqk5idg00004iwmwng33ayp">
         <img src="/img/read/photo1.jpg" itemprop="image">
       </a>
     
-      <a class="article-gallery-img fancybox" href="/img/read/photo2.jpg" rel="gallery_cifkhcrl20000wtwmp0iiwooy">
+      <a class="article-gallery-img fancybox" href="/img/read/photo2.jpg" rel="gallery_cifqk5idg00004iwmwng33ayp">
         <img src="/img/read/photo2.jpg" itemprop="image">
       </a>
     
@@ -356,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/28/阅读/" data-id="cifkhcrl20000wtwmp0iiwooy" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/28/阅读/" data-id="cifqk5idg00004iwmwng33ayp" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/28/阅读/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -405,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/28/Git笔记-二/" data-id="cifkhcrmj0018wtwm8qqkbuh3" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/28/Git笔记-二/" data-id="cifqk5if6001d4iwm10a8jlnf" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/28/Git笔记-二/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -458,7 +501,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/28/Git笔记/" data-id="cifkhcrmf0013wtwmom59b7gt" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/28/Git笔记/" data-id="cifqk5if100184iwmvhj01v4z" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/28/Git笔记/#ds-thread" class="article-comment-link">Comments</a>
       
@@ -504,60 +547,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/27/第三期CW开班/" data-id="cifkhcrlg0005wtwm7wqd6m79" class="article-share-link">Share</a>
+      <a data-url="http://say520.xyz/2015/09/27/第三期CW开班/" data-id="cifqk5idz000a4iwmfrq8ujxv" class="article-share-link">Share</a>
       
         <a href="http://say520.xyz/2015/09/27/第三期CW开班/#ds-thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CW/">CW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手键/">手键</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/无线电/">无线电</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CentOS中查看图片信息" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/27/CentOS中查看图片信息/" class="article-date">
-  <time datetime="2015-09-27T11:10:56.000Z" itemprop="datePublished">2015-09-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/27/CentOS中查看图片信息/">CentOS中查看图片信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>需要使用命令mediainfo<br>安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install mediainfo -y</span></span><br></pre></td></tr></table></figure></p>
-<p>查看图片信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mediainfo banner.jpg</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="/img/mediainfo.png" alt="mediainfo"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://say520.xyz/2015/09/27/CentOS中查看图片信息/" data-id="cifkhcrmn001bwtwml404l49l" class="article-share-link">Share</a>
-      
-        <a href="http://say520.xyz/2015/09/27/CentOS中查看图片信息/#ds-thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片/">图片</a></li></ul>
 
     </footer>
   </div>
@@ -590,7 +585,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CW/" style="font-size: 10px;">CW</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/思考/" style="font-size: 10px;">思考</a> <a href="/tags/手键/" style="font-size: 10px;">手键</a> <a href="/tags/无线电/" style="font-size: 10px;">无线电</a> <a href="/tags/架台/" style="font-size: 10px;">架台</a> <a href="/tags/野外/" style="font-size: 10px;">野外</a> <a href="/tags/阅读/" style="font-size: 10px;">阅读</a>
+      <a href="/tags/ARP/" style="font-size: 10px;">ARP</a> <a href="/tags/CW/" style="font-size: 10px;">CW</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/sed/" style="font-size: 10px;">sed</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/思考/" style="font-size: 10px;">思考</a> <a href="/tags/手键/" style="font-size: 10px;">手键</a> <a href="/tags/无线电/" style="font-size: 10px;">无线电</a> <a href="/tags/架台/" style="font-size: 10px;">架台</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/野外/" style="font-size: 10px;">野外</a> <a href="/tags/阅读/" style="font-size: 10px;">阅读</a>
     </div>
   </div>
 
@@ -599,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -609,6 +604,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/10/14/网络连接正常，上不了网/">网络连接正常，上不了网</a>
+          </li>
         
           <li>
             <a href="/2015/10/10/国庆节宣桥架台/">国庆节宣桥架台</a>
@@ -624,10 +623,6 @@
         
           <li>
             <a href="/2015/09/29/VIM总结出的一张图/">VIM总结出的一张图</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/29/创业公司的这些问题…其实是常态/">创业公司的这些问题…其实是常态</a>
           </li>
         
       </ul>
